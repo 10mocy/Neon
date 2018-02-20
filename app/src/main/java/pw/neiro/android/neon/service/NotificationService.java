@@ -58,6 +58,8 @@ public class NotificationService extends NotificationListenerService {
             e.printStackTrace();
         }
 
+        if(songTitle == null || songTitle.isEmpty()) return;
+
         String tweetText = "🎵 " + songTitle + "\n"
                 + "🎤 " + songArtist + "\n"
                 + "💿 " + songAlbum + "\n"
