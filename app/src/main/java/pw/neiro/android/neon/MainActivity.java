@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
 
         intent.setAction(Settings.ACTION_NOTIFICATION_LISTENER_SETTINGS);
         startActivity(intent);
-        Toast.makeText(MainActivity.getContext(), "zadaslk;fjsa", Toast.LENGTH_LONG).show();
+        //Toast.makeText(MainActivity.getContext(), "", Toast.LENGTH_LONG).show();
 
     }
 
