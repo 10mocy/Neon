@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Neon</string>
+    <string name="twitter_callback_url">neon://twitter</string>
+</resources>
