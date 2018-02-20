@@ -60,7 +60,8 @@ public class NotificationService extends NotificationListenerService {
         String tweetText = "🎵 " + songTitle + "\n"
                 + "🎤 " + songArtist + "\n"
                 + "💿 " + songAlbum + "\n"
-                + "🎧 " + player;
+                + "🎧 " + player + "\n"
+                + "#NowPlaying #NeonNP #自動";
 
         //Toast.makeText(MainActivity.getContext(), tweetText, Toast.LENGTH_LONG).show();
 
