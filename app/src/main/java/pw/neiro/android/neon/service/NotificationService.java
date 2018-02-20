@@ -20,12 +20,13 @@ import pw.neiro.android.neon.util.TwitterAPI;
 public class NotificationService extends NotificationListenerService {
 
     private static final String FILTER_CLOUDPLAYER = "com.doubleTwist.cloudPlayer";
-
     private static final HashMap<String, String> PLAYER_LIST = new HashMap<String, String>() {
         {
             put(FILTER_CLOUDPLAYER, "CloudPlayer");
         }
     };
+
+    String previous = "";
 
     @Override
     public void onCreate() {
@@ -65,6 +66,8 @@ public class NotificationService extends NotificationListenerService {
 
         //Toast.makeText(MainActivity.getContext(), tweetText, Toast.LENGTH_LONG).show();
 
+        if(previous.equals(tweetText)) return;
+            previous = tweetText;
         TwitterAPI.statusUpdate(tweetText);
 
     }
