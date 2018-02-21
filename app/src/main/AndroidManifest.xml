@@ -3,10 +3,13 @@
     package="pw.neiro.android.neon">
 
     <uses-sdk
-        android:minSdkVersion="8"
+        android:minSdkVersion="21"
         android:targetSdkVersion="26" />
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -36,6 +39,9 @@
                     android:scheme="neon" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".SettingActivity"
+            android:label="@string/app_name"></activity>
 
         <service
             android:name=".service.NotificationService"

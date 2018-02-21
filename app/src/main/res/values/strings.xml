@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">Neon</string>
-    <string name="twitter_callback_url">neon://twitter</string>
+    <string name="twitter_callback_url" translatable="false">neon://twitter</string>
+    <string name="tweet_template">:title: - :album: (:artist:) / :player: | :y:-:m:-:d :h:::i:::s:</string>
+    <string name="twitter_authorize_setting">Application Authorize Setting</string>
+    <string name="template">Tweet Template</string>
+    <string name="template_dialog">[Song information]\n  :title: - Song title\n  :artist: - Song artist\n  :album: - Song album\n\n[Date information]\n  :y: - Year\n  :m: - Month\n  :d: - Day\n  :h: - Hour\n  :i: - Minute\n  :s: - Second</string>
+    <string name="is_tweet">Post tweet</string>
+    <string name="is_tweet_notify">Tweet notify</string>
+    <string name="category_setting_twitter">Twitter setting</string>
 </resources>

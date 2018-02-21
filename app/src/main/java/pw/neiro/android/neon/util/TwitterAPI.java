@@ -34,11 +34,11 @@ public class TwitterAPI {
 
             @Override
             protected void onPostExecute(Boolean result) {
-                if(result) {
+                /*if(result) {
                     Toast.makeText(MainActivity.getContext(), "aaa", Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(MainActivity.getContext(), "eee", Toast.LENGTH_SHORT).show();
-                }
+                }*/
             }
         };
         task.execute(tweet);

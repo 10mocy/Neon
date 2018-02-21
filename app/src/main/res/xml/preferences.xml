@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--<Preference android:key="twitter_auth"
+        android:title="@string/twitter_authorize_setting" />-->
+    <PreferenceCategory android:title="@string/category_setting_twitter">
+
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="is_tweet"
+            android:title="@string/is_tweet" />
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="is_tweet_notify"
+            android:title="@string/is_tweet_notify" />
+        <EditTextPreference
+            android:dialogTitle="@string/template"
+            android:defaultValue="@string/tweet_template"
+            android:dialogMessage="@string/template_dialog"
+            android:key="tweet_template"
+            android:title="@string/template" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
