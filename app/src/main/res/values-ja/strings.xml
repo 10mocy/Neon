@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Neon</string>
+    <string name="app_name">NeonNP</string>
     <string name="tweet_template">:title: - :album: (:artist:) / :player: | :y:年:m:月:d日 :h:時:i:分:s:秒</string>
     <string name="twitter_authorize_setting">"アプリケーション連携 "</string>
     <string name="template">ツイートテンプレート</string>
     <string name="template_dialog">[曲の情報]\n  :title: - 曲名\n  :artist: - アーティスト\n  :album: - アルバム名\n\n[再生日時]\n  :y: - 年\n  :m: - 月\n  :d: - 日\n  :h: - 時\n  :i: - 分\n  :s: - 秒</string>
     <string name="is_tweet">ツイートを行う</string>
     <string name="is_tweet_notify">ツイート時にトーストを表示する</string>
-    <string name="category_setting_twitter">Twitter関連設定</string>
+    <string name="category_setting_twitter">Twitter設定</string>
+    <string name="category_debug">デバッグ設定</string>
+    <string name="debug_info">デバッグ情報</string>
+    <string name="setting">設定</string>
+    <string name="service_check">サービス状態</string>
+    <string name="service_start">サービス開始</string>
+    <string name="service_stop">サービス停止</string>
+    <string name="category_service">サービス管理</string>
+    <string name="activity_main_text">NeonNPを使う準備が整いました。</string>
+    <string name="close">閉じる</string>
 </resources>

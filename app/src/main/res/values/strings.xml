@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Neon</string>
+    <string name="app_name">NeonNP</string>
     <string name="twitter_callback_url" translatable="false">neon://twitter</string>
     <string name="tweet_template">:title: - :album: (:artist:) / :player: | :y:-:m:-:d :h:::i:::s:</string>
     <string name="twitter_authorize_setting">Application Authorize Setting</string>
@@ -8,4 +8,13 @@
     <string name="is_tweet">Post tweet</string>
     <string name="is_tweet_notify">Tweet notify</string>
     <string name="category_setting_twitter">Twitter setting</string>
+    <string name="category_debug">Debug setting</string>
+    <string name="debug_info">Debug information</string>
+    <string name="setting">Setting</string>
+    <string name="service_check">Service check</string>
+    <string name="service_start">Service start</string>
+    <string name="service_stop">Service stop</string>
+    <string name="category_service">Service management</string>
+    <string name="activity_main_text">Welcome to NeonNP.</string>
+    <string name="close">Close</string>
 </resources>

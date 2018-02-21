@@ -21,5 +21,11 @@
             android:title="@string/template" />
 
     </PreferenceCategory>
+    <PreferenceCategory android:title="@string/category_debug">
+
+        <Preference android:key="debug_info"
+            android:title="@string/debug_info" />
+
+    </PreferenceCategory>
 
 </PreferenceScreen>

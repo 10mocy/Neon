@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--<Preference android:key="twitter_auth"
+        android:title="@string/twitter_authorize_setting" />-->
+    <PreferenceCategory android:title="@string/category_service">
+
+        <Preference android:key="service_check"
+            android:title="@string/service_check" />
+        <Preference android:key="service_start"
+            android:title="@string/service_start" />
+        <Preference android:key="service_stop"
+            android:title="@string/service_stop" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
