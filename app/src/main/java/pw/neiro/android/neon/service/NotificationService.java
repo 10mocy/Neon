@@ -26,6 +26,8 @@ public class NotificationService extends NotificationListenerService {
 
     private static SharedPreferences sharedPreferences;
 
+    private static final String TAG = "NeonNP";
+
     private static final String FILTER_CLOUDPLAYER = "com.doubleTwist.cloudPlayer";
     private static final String FILTER_PLAYMUSIC = "com.google.android.music";
     private static final String FILTER_SPOTIFY = "com.spotify.music";
@@ -56,12 +58,15 @@ public class NotificationService extends NotificationListenerService {
         /* Toast.makeText(MainActivity.getContext(), "通知", Toast.LENGTH_SHORT).show(); */
 
         /* ここから */
+            Log.d(TAG, "通知をレシーブしました。");
+
         String packageName = sbn.getPackageName();
         if(!(
                 packageName.equals(FILTER_CLOUDPLAYER)
                 || packageName.equals(FILTER_PLAYMUSIC)
                 || packageName.equals(FILTER_SPOTIFY)
         )) return;
+            Log.d(TAG, "対応した音楽プレイヤーです。");
 
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
 
@@ -72,6 +77,7 @@ public class NotificationService extends NotificationListenerService {
         String songArtist = "";
         String songAlbum = "";
         String player = PLAYER_LIST.get(packageName);
+            Log.d(TAG, "player = " + player);
 
         final Calendar calendar = Calendar.getInstance();
         int year = calendar.get(Calendar.YEAR);
@@ -85,12 +91,18 @@ public class NotificationService extends NotificationListenerService {
             songTitle = extras.getCharSequence(Notification.EXTRA_TITLE).toString();
             songArtist = extras.getCharSequence(Notification.EXTRA_TEXT).toString();
             songAlbum = extras.getCharSequence(Notification.EXTRA_SUB_TEXT).toString();
+                Log.d(TAG,
+                        "songTitle : " + songTitle + "\n"
+                                + "songArtist : " + songArtist + "\n"
+                                + "songAlbum : " + songAlbum
+                );
         } catch (NullPointerException e) {
             e.printStackTrace();
         }
 
         if( (songTitle == null || songTitle.isEmpty())
                         || (songAlbum == null || songAlbum.isEmpty()) ) return;
+            Log.d(TAG, "タイトル及びアルバムがnullではありません。");
 
         String tweetText = template
                 .replaceAll(":title:", songTitle)
@@ -100,6 +112,7 @@ public class NotificationService extends NotificationListenerService {
 
         if(previous.equals(tweetText)) return;
         previous = tweetText;
+            Log.d(TAG, "前回ツイートされた内容ではありません。");
 
         tweetText = tweetText
                 .replaceAll(":y:", String.format("%4d", year))
@@ -110,16 +123,19 @@ public class NotificationService extends NotificationListenerService {
                 .replaceAll(":s:", String.format("%02d", second));
 
         if(sharedPreferences.getBoolean("is_tweet_notify", true)) {
+            Log.d(TAG, "ツイート時通知の設定が有効です。");
             Toast.makeText(MainActivity.getContext(), tweetText, Toast.LENGTH_SHORT).show();
         }
 
         TwitterAPI.statusUpdate(tweetText);
+            Log.d(TAG, "ツイートを送信しました。");
 
     }
 
     @Override
     public void onNotificationRemoved(StatusBarNotification sbn) { //通知が削除された際に呼び出される
-        Toast.makeText(MainActivity.getContext(), "通知削除", Toast.LENGTH_SHORT).show();
+        /* Toast.makeText(MainActivity.getContext(), "通知削除", Toast.LENGTH_SHORT).show(); */
+        Log.d(TAG, "通知削除をレシーブしました。");
     }
 
 }
